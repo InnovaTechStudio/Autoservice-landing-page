@@ -13,20 +13,28 @@
 <body>
     <header class="navbar">
         <div class="container navbar__container">
-            <a href="#" class="navbar__brand">
+            <a href="#hero" class="navbar__brand">
                 <img src="img/logo.png" alt="AutoService logo" class="navbar__logo" />
                 <span class="navbar__title">AutoService</span>
             </a>
 
-            <nav class="navbar__menu">
-                <a href="#hero">Home</a>
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How it Works</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
+            <nav class="navbar__menu" id="navbarMenu">
+                <a href="#hero" class="navbar__link navbar__link--active">Home</a>
+                <a href="#features" class="navbar__link">Features</a>
+                <a href="#how-it-works" class="navbar__link">How it Works</a>
+                <a href="#pricing" class="navbar__link">Pricing</a>
+                <a href="#contact" class="navbar__link">Contact</a>
             </nav>
 
-            <a href="#pricing" class="btn btn--primary">Start Free Trial</a>
+            <div class="navbar__actions">
+                <a href="#pricing" class="btn btn--primary">Start Free Trial</a>
+
+                <button class="navbar__toggle" id="navbarToggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 

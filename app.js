@@ -1,4 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("AutoService landing page ready");
+    const toggle = document.getElementById("navbarToggle");
+    const menu = document.getElementById("navbarMenu");
+
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("navbar__menu--open");
+    });
 });
