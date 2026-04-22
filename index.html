@@ -7,7 +7,13 @@
     <title>AutoService | Digital Management for Workshops</title>
     <meta name="description"
         content="AutoService is a digital management platform for automotive workshops. Manage vehicles, work orders, billing and customer tracking in one place." />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="icon" type="image/jpeg" href="img/AutoService.jpeg" />
 </head>
 
 <body>
@@ -19,16 +25,16 @@
             </a>
 
             <nav class="navbar__menu" id="navbarMenu">
-                <a href="#hero" class="navbar__link navbar__link--active">Home</a>
-                <a href="#features" class="navbar__link">Features</a>
-                <a href="#how-it-works" class="navbar__link">How it Works</a>
-                <a href="#pricing" class="navbar__link">Pricing</a>
-                <a href="#contact" class="navbar__link">Contact</a>
+                <a href="#hero" class="navbar__link navbar__link--active" data-i18n="nav_home">Home</a>
+                <a href="#features" class="navbar__link" data-i18n="nav_features">Features</a>
+                <a href="#how-it-works" class="navbar__link" data-i18n="nav_how">How it Works</a>
+                <a href="#pricing" class="navbar__link" data-i18n="nav_pricing">Pricing</a>
+                <a href="#contact" class="navbar__link" data-i18n="nav_contact">Contact</a>
             </nav>
 
             <div class="navbar__actions">
-                <a href="#pricing" class="btn btn--primary">Start Free Trial</a>
-
+                <a href="#pricing" class="btn btn--primary" data-i18n="nav_cta">Start Free Trial</a>
+                <button class="btn btn--lang" id="langToggle">ES</button>
                 <button class="navbar__toggle" id="navbarToggle" aria-label="Open menu">
                     <span></span>
                     <span></span>
@@ -39,456 +45,318 @@
     </header>
 
     <main>
+        <!-- HERO -->
         <section id="hero" class="hero">
             <div class="container hero__container">
-
                 <div class="hero__top">
-                    <span class="hero__badge">
-                        DIGITAL SOLUTION FOR AUTOMOTIVE WORKSHOPS
-                    </span>
-
-                    <h1 class="hero__title">
-                        Manage your workshop with more <span>control</span>, speed and confidence
-                    </h1>
-
-                    <p class="hero__description">
-                        Organize vehicles, work orders, payments and customers in one place.
-                        Reduce manual work and improve your service efficiency.
-                    </p>
-
+                    <span class="hero__badge" data-i18n="hero_badge">DIGITAL SOLUTION FOR AUTOMOTIVE WORKSHOPS</span>
+                    <h1 class="hero__title" data-i18n="hero_title">Manage your workshop with more <span>control</span>, speed and confidence</h1>
+                    <p class="hero__description" data-i18n="hero_desc">Organize vehicles, work orders, payments and customers in one place. Reduce manual work and improve your service efficiency.</p>
                     <div class="hero__actions">
-                        <a href="#pricing" class="btn btn--primary">Start Free Trial</a>
-                        <a href="#" class="btn btn--secondary">Book a Demo</a>
+                        <a href="#pricing" class="btn btn--primary" data-i18n="hero_cta">Start Free Trial</a>
                     </div>
                 </div>
-
                 <div class="hero__bottom">
-                    <div class="dashboard">
-
-                        <div class="dashboard__sidebar">
-                            <div class="sidebar__top">
-                                <div class="sidebar__line sidebar__line--lg"></div>
-                                <div class="sidebar__pill sidebar__pill--active"></div>
-                                <div class="sidebar__pill"></div>
-                                <div class="sidebar__pill"></div>
-                            </div>
-
-                            <div class="sidebar__menu">
-                                <p class="sidebar__menu-item sidebar__menu-item--active">Dashboard</p>
-                                <p class="sidebar__menu-item">Vehicles</p>
-                                <p class="sidebar__menu-item">Work Orders</p>
-                                <p class="sidebar__menu-item">Customers</p>
-                                <p class="sidebar__menu-item">Billing</p>
-                                <p class="sidebar__menu-item">Reports</p>
-                            </div>
-
-                            <div class="sidebar__bottom">
-                                <div class="sidebar__pill sidebar__pill--wide"></div>
-                                <div class="sidebar__pill sidebar__pill--wide"></div>
-                            </div>
-                        </div>
-
-                        <div class="dashboard__main">
-                            <div class="dashboard__cards">
-                                <div class="metric-card">
-                                    <p class="metric-card__label">ACTIVE WORK ORDERS</p>
-                                    <h3 class="metric-card__value">18</h3>
-                                    <span class="metric-card__meta metric-card__meta--positive">↑ 12% from last
-                                        week</span>
-                                </div>
-
-                                <div class="metric-card">
-                                    <p class="metric-card__label">DAILY REVENUE</p>
-                                    <h3 class="metric-card__value">$2,450</h3>
-                                    <span class="metric-card__meta">Target: $4k</span>
-                                </div>
-
-                                <div class="metric-card">
-                                    <p class="metric-card__label">VEHICLES IN SERVICE</p>
-                                    <h3 class="metric-card__value">12</h3>
-                                    <span class="metric-card__meta">3 bays available</span>
-                                </div>
-                            </div>
-
-                            <div class="dashboard__preview">
-                                <img src="img/dashboard.png" alt="Dashboard preview" class="dashboard__image">
-                            </div>
-                        </div>
-
-                    </div>
+                    <img src="img/dashboard-en.png" alt="AutoService Dashboard" class="hero__dashboard-img" />
                 </div>
-
             </div>
         </section>
+
+        <!-- FEATURES -->
         <section id="features" class="features">
             <div class="container features__container">
                 <article class="feature-card">
-                    <div class="feature-card__icon">⚡</div>
-                    <h3 class="feature-card__title">Work Order Management</h3>
-                    <p class="feature-card__text">
-                        Create, assign and track work orders in real time. Keep full control of every repair from intake
-                        to delivery.
-                    </p>
+                    <div class="feature-card__icon"><i data-lucide="zap"></i></div>
+                    <h3 class="feature-card__title" data-i18n="feat1_title">Work Order Management</h3>
+                    <p class="feature-card__text" data-i18n="feat1_text">Create, assign and track work orders in real time. Keep full control of every repair from intake to delivery.</p>
                 </article>
-
                 <article class="feature-card">
-                    <div class="feature-card__icon">◎</div>
-                    <h3 class="feature-card__title">Vehicle &amp; Customer Tracking</h3>
-                    <p class="feature-card__text">
-                        Store complete vehicle history and customer data in one place. Access service records instantly
-                        and improve your workflow.
-                    </p>
+                    <div class="feature-card__icon"><i data-lucide="target"></i></div>
+                    <h3 class="feature-card__title" data-i18n="feat2_title">Vehicle &amp; Customer Tracking</h3>
+                    <p class="feature-card__text" data-i18n="feat2_text">Store complete vehicle history and customer data in one place. Access service records instantly and improve your workflow.</p>
                 </article>
-
                 <article class="feature-card">
-                    <div class="feature-card__icon">🛡</div>
-                    <h3 class="feature-card__title">Billing &amp; Payments Control</h3>
-                    <p class="feature-card__text">
-                        Manage invoices, payments and service costs with ease. Reduce errors and keep your workshop
-                        finances organized.
-                    </p>
+                    <div class="feature-card__icon"><i data-lucide="shield-check"></i></div>
+                    <h3 class="feature-card__title" data-i18n="feat3_title">Billing &amp; Payments Control</h3>
+                    <p class="feature-card__text" data-i18n="feat3_text">Manage invoices, payments and service costs with ease. Reduce errors and keep your workshop finances organized.</p>
                 </article>
             </div>
         </section>
+
+        <!-- PROBLEM / SOLUTION -->
         <section id="problem-solution" class="problem-solution">
             <div class="container problem-solution__container">
-
                 <div class="problem-solution__left">
-                    <span class="section-label section-label--danger">THE PROBLEM</span>
-
-                    <h2 class="problem-solution__title">
-                        Manual processes are slowing down your workshop.
-                    </h2>
-
-                    <p class="problem-solution__text">
-                        Work orders get lost, billing is inconsistent, and customer tracking is inefficient.
-                        Many workshops still rely on paper, spreadsheets, or disconnected tools, leading to delays and
-                        errors.
-                    </p>
-
+                    <span class="section-label section-label--danger" data-i18n="prob_label">THE PROBLEM</span>
+                    <h2 class="problem-solution__title" data-i18n="prob_title">Manual processes are slowing down your workshop.</h2>
+                    <p class="problem-solution__text" data-i18n="prob_text">Work orders get lost, billing is inconsistent, and customer tracking is inefficient. Many workshops still rely on paper, spreadsheets, or disconnected tools, leading to delays and errors.</p>
                     <div class="solution-card">
-                        <span class="section-label section-label--primary">THE SOLUTION</span>
-
-                        <h3 class="solution-card__title">
-                            A centralized platform for complete workshop control
-                        </h3>
-
-                        <p class="solution-card__text">
-                            AutoService connects your vehicles, work orders, customers and payments in one system.
-                            Manage your entire operation from a single, easy-to-use dashboard.
-                        </p>
-
+                        <span class="section-label section-label--primary" data-i18n="sol_label">THE SOLUTION</span>
+                        <h3 class="solution-card__title" data-i18n="sol_title">A centralized platform for complete workshop control</h3>
+                        <p class="solution-card__text" data-i18n="sol_text">AutoService connects your vehicles, work orders, customers and payments in one system. Manage your entire operation from a single, easy-to-use dashboard.</p>
                         <ul class="solution-card__list">
-                            <li>Real-time work order tracking</li>
-                            <li>Complete vehicle and service history</li>
-                            <li>Fast and accurate billing management</li>
+                            <li><i data-lucide="circle-check"></i><span data-i18n="sol_li1">Real-time work order tracking</span></li>
+                            <li><i data-lucide="circle-check"></i><span data-i18n="sol_li2">Complete vehicle and service history</span></li>
+                            <li><i data-lucide="circle-check"></i><span data-i18n="sol_li3">Fast and accurate billing management</span></li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="problem-solution__right">
-
-                    <img src="img/problem.jpg" alt="AutoService Problem" class="problem-image" />
+                    <img src="img/problem.png" alt="AutoService Problem" class="problem-image" />
                 </div>
-
             </div>
         </section>
 
+        <!-- TOOLS -->
         <section id="tools" class="tools">
             <div class="container">
-
                 <div class="tools__header">
-                    <h2 class="tools__title">Powerful tools for modern workshop management</h2>
-                    <p class="tools__subtitle">
-                        Everything you need to manage vehicles, work orders, staff and payments in one platform.
-                    </p>
+                    <h2 class="tools__title" data-i18n="tools_title">Powerful tools for modern workshop management</h2>
+                    <p class="tools__subtitle" data-i18n="tools_sub">Everything you need to manage vehicles, work orders, staff and payments in one platform.</p>
                 </div>
-
-                <div class="tools__interactive">
-
-                    <button class="tool-option tool-option--left active" data-image="img/dashboardoverview.jpeg"
-                        data-title="Dashboard Overview"
-                        data-text="Get a real-time view of your workshop. Track active work orders, vehicle status and daily performance at a glance.">
-                        <h3>Dashboard Overview</h3>
-                        <p>Get a real-time view of your workshop. Track active work orders, vehicle status and daily
-                            performance at a glance.</p>
+                <div class="tools__tabs">
+                    <button class="tools__tab active" data-image="img/dashboard-en.png" data-alt="Dashboard Overview">
+                        <i data-lucide="layout-dashboard"></i> <span data-i18n="tab1">Dashboard Overview</span>
                     </button>
-
-                    <div class="tools__preview-card">
-                        <img id="toolPreviewImage" src="img/dashboardoverview.jpeg" alt="Dashboard Overview"
-                            class="tools__preview-image" />
-                    </div>
-
-                    <button class="tool-option tool-option--right" data-image="img/billing.jpeg"
-                        data-title="Billing & Invoicing"
-                        data-text="Create invoices, manage payments and track service costs with accuracy and ease.">
-                        <h3>Billing & Invoicing</h3>
-                        <p>Create invoices, manage payments and track service costs with accuracy and ease.</p>
+                    <button class="tools__tab" data-image="img/details-work-order-en.png" data-alt="Billing & Invoicing">
+                        <i data-lucide="receipt"></i> <span data-i18n="tab2">Billing &amp; Invoicing</span>
                     </button>
-
-                    <button class="tool-option tool-option--bottom-left" data-image="img/staff.jpeg"
-                        data-title="Staff Management"
-                        data-text="Assign tasks to mechanics, monitor progress and improve team efficiency.">
-                        <h3>Staff Management</h3>
-                        <p>Assign tasks to mechanics, monitor progress and improve team efficiency.</p>
+                    <button class="tools__tab" data-image="img/staff-en.png" data-alt="Staff Management">
+                        <i data-lucide="users"></i> <span data-i18n="tab3">Staff Management</span>
                     </button>
-
-                    <button class="tool-option tool-option--bottom-right" data-image="img/workorders.jpeg"
-                        data-title="Work Orders & Parts"
-                        data-text="Manage repair orders and track parts usage to keep your workflow organized.">
-                        <h3>Work Orders & Parts</h3>
-                        <p>Manage repair orders and track parts usage to keep your workflow organized.</p>
-                    </button>
-
                 </div>
-
+                <div class="tools__preview-card">
+                    <img id="toolPreviewImage" src="img/dashboard-en.png" alt="Dashboard Overview" class="tools__preview-image" />
+                </div>
             </div>
         </section>
+
+        <!-- HOW IT WORKS -->
         <section id="how-it-works" class="steps">
             <div class="container">
-
                 <div class="steps__header">
-                    <h2 class="steps__title">Get started in 3 simple steps</h2>
+                    <h2 class="steps__title" data-i18n="steps_title">Get started in 3 simple steps</h2>
                 </div>
-
                 <div class="steps__timeline"></div>
-
                 <div class="steps__grid">
                     <article class="step-card">
                         <div class="step-card__number">1</div>
-                        <h3 class="step-card__title">Set Up Your Workshop</h3>
-                        <p class="step-card__text">
-                            Add your workshop details, staff and customers.
-                            Get your system ready in minutes.
-                        </p>
+                        <h3 class="step-card__title" data-i18n="step1_title">Set Up Your Workshop</h3>
+                        <p class="step-card__text" data-i18n="step1_text">Add your workshop details, staff and customers. Get your system ready in minutes.</p>
                     </article>
-
                     <article class="step-card">
                         <div class="step-card__number">2</div>
-                        <h3 class="step-card__title">Manage Work Orders</h3>
-                        <p class="step-card__text">
-                            Create and assign work orders, track progress and organize your daily operations.
-                        </p>
+                        <h3 class="step-card__title" data-i18n="step2_title">Manage Work Orders</h3>
+                        <p class="step-card__text" data-i18n="step2_text">Create and assign work orders, track progress and organize your daily operations.</p>
                     </article>
-
                     <article class="step-card">
                         <div class="step-card__number">3</div>
-                        <h3 class="step-card__title">Track and Improve</h3>
-                        <p class="step-card__text">
-                            Monitor performance, manage payments and improve efficiency with real-time data.
-                        </p>
+                        <h3 class="step-card__title" data-i18n="step3_title">Track and Improve</h3>
+                        <p class="step-card__text" data-i18n="step3_text">Monitor performance, manage payments and improve efficiency with real-time data.</p>
                     </article>
                 </div>
-
             </div>
         </section>
+
+        <!-- SIMPLICITY -->
         <section id="simplicity" class="simplicity">
             <div class="container">
-
                 <div class="simplicity__top">
                     <div class="simplicity__header">
-                        <h2 class="simplicity__title">Designed for simplicity and real workshop needs</h2>
-                        <p class="simplicity__subtitle">
-                            We built AutoService to make daily operations easier for mechanics and workshop owners.
-                            No complex systems, just the tools you actually need.
-                        </p>
+                        <h2 class="simplicity__title" data-i18n="simp_title">Designed for simplicity and real workshop needs</h2>
+                        <p class="simplicity__subtitle" data-i18n="simp_sub">We built AutoService to make daily operations easier for mechanics and workshop owners. No complex systems, just the tools you actually need.</p>
                     </div>
-
                     <div class="simplicity__controls">
-                        <button class="simplicity__arrow" aria-label="Previous">
-                            &#8592;
-                        </button>
-                        <button class="simplicity__arrow" aria-label="Next">
-                            &#8594;
-                        </button>
+                        <button class="simplicity__arrow" aria-label="Previous">&#8592;</button>
+                        <button class="simplicity__arrow" aria-label="Next">&#8594;</button>
                     </div>
                 </div>
-
                 <div class="simplicity__gallery">
                     <article class="simplicity__card">
-
-                        <img src="img/simplicity.jpg" alt="Simplicity 1"
-                            class="simplicity__image simplicity__image--one" />
+                        <img src="img/task.png" alt="Simplicity 1" class="simplicity__image simplicity__image--one" />
                     </article>
-
                     <article class="simplicity__card">
-
-                        <img src="img/simplicity2.jpg" alt="Simplicity 2"
-                            class="simplicity__image simplicity__image--two"" />
+                        <img src="img/details-mecanic.png" alt="Simplicity 2" class="simplicity__image simplicity__image--two" />
                     </article>
-
-                    <article class=" simplicity__card">
-
-                        <img src="img/simplicity3.png" alt="Simplicity 3"
-                            class="simplicity__image simplicity__image--three" />
+                    <article class="simplicity__card">
+                        <img src="img/details-work-order-en.png" alt="Simplicity 3" class="simplicity__image simplicity__image--three" />
                     </article>
                 </div>
-
                 <div class="simplicity__bottom">
-                    <p>Easy to use</p>
+                    <p data-i18n="simp_tag1">Easy to use</p>
                     <span>•</span>
-                    <p>No training required</p>
+                    <p data-i18n="simp_tag2">No training required</p>
                     <span>•</span>
-                    <p>Ready in minutes</p>
+                    <p data-i18n="simp_tag3">Ready in minutes</p>
                 </div>
-
             </div>
         </section>
+
+        <!-- PRICING -->
         <section id="pricing" class="pricing">
             <div class="container">
-
                 <div class="pricing__header">
-                    <h2 class="pricing__title">Simple and scalable pricing for every workshop</h2>
-                    <p class="pricing__subtitle">
-                        Start for free and upgrade as your workshop grows.
-                    </p>
+                    <h2 class="pricing__title" data-i18n="price_title">Simple and scalable pricing for every workshop</h2>
+                    <p class="pricing__subtitle" data-i18n="price_sub">Start for free and upgrade as your workshop grows.</p>
                 </div>
-
                 <div class="pricing__grid">
 
                     <article class="pricing-card">
-                        <span class="pricing-card__tag">Free</span>
-                        <h3 class="pricing-card__plan">Free</h3>
-                        <p class="pricing-card__audience">For small or independent mechanics</p>
+                        <span class="pricing-card__tag" data-i18n="plan1_tag">Free</span>
+                        <h3 class="pricing-card__plan" data-i18n="plan1_name">Free</h3>
+                        <p class="pricing-card__audience" data-i18n="plan1_audience">For small or independent mechanics</p>
                         <div class="pricing-card__price">
                             <span class="pricing-card__currency">$</span>0
-                            <span class="pricing-card__period">/ month</span>
+                            <span class="pricing-card__period" data-i18n="per_month">/ month</span>
                         </div>
-
                         <ul class="pricing-card__features">
-                            <li>Up to 5 Work Orders per month</li>
-                            <li>Basic Vehicle &amp; Customer Records</li>
-                            <li>Simple Billing (manual)</li>
-                            <li class="is-disabled">Staff Management</li>
-                            <li class="is-disabled">Reports &amp; Analytics</li>
-                            <li class="is-disabled">Real-time tracking</li>
+                            <li data-i18n="plan1_f1">Up to 5 Work Orders per month</li>
+                            <li data-i18n="plan1_f2">Basic Vehicle &amp; Customer Records</li>
+                            <li data-i18n="plan1_f3">Simple Billing (manual)</li>
+                            <li class="is-disabled" data-i18n="plan1_f4">Staff Management</li>
+                            <li class="is-disabled" data-i18n="plan1_f5">Reports &amp; Analytics</li>
+                            <li class="is-disabled" data-i18n="plan1_f6">Real-time tracking</li>
                         </ul>
-
-                        <a href="#" class="btn btn--outline pricing-card__button">Get Started</a>
+                        <a href="#" class="btn btn--outline pricing-card__button" data-i18n="plan1_cta">Get Started</a>
                     </article>
 
                     <article class="pricing-card pricing-card--featured">
-                        <span class="pricing-card__tag pricing-card__tag--featured">Most Popular</span>
-                        <h3 class="pricing-card__plan">Pro</h3>
-                        <p class="pricing-card__audience">For growing workshops</p>
+                        <span class="pricing-card__tag pricing-card__tag--featured" data-i18n="plan2_tag">Most Popular</span>
+                        <h3 class="pricing-card__plan" data-i18n="plan2_name">Pro</h3>
+                        <p class="pricing-card__audience" data-i18n="plan2_audience">For growing workshops</p>
                         <div class="pricing-card__price">
                             <span class="pricing-card__currency">$</span>29
-                            <span class="pricing-card__period">/ month</span>
+                            <span class="pricing-card__period" data-i18n="per_month">/ month</span>
                         </div>
-
                         <ul class="pricing-card__features">
-                            <li>Unlimited Work Orders</li>
-                            <li>Vehicle &amp; Service History</li>
-                            <li>Real-time Work Tracking</li>
-                            <li>Billing &amp; Payment Management</li>
-                            <li>Up to 5 Staff Accounts</li>
-                            <li>Basic Reports &amp; Insights</li>
-                            <li>Limited Smart Recommendations</li>
+                            <li data-i18n="plan2_f1">Unlimited Work Orders</li>
+                            <li data-i18n="plan2_f2">Vehicle &amp; Service History</li>
+                            <li data-i18n="plan2_f3">Real-time Work Tracking</li>
+                            <li data-i18n="plan2_f4">Billing &amp; Payment Management</li>
+                            <li data-i18n="plan2_f5">Up to 5 Staff Accounts</li>
+                            <li data-i18n="plan2_f6">Basic Reports &amp; Insights</li>
+                            <li data-i18n="plan2_f7">Limited Smart Recommendations</li>
                         </ul>
-
-                        <a href="#" class="btn btn--primary pricing-card__button">Start Free Trial</a>
+                        <a href="#" class="btn btn--primary pricing-card__button" data-i18n="plan2_cta">Start Free Trial</a>
                     </article>
 
                     <article class="pricing-card">
-                        <span class="pricing-card__tag">Business</span>
-                        <h3 class="pricing-card__plan">Business</h3>
-                        <p class="pricing-card__audience">For multi-bay workshops and teams</p>
+                        <span class="pricing-card__tag" data-i18n="plan3_tag">Business</span>
+                        <h3 class="pricing-card__plan" data-i18n="plan3_name">Business</h3>
+                        <p class="pricing-card__audience" data-i18n="plan3_audience">For multi-bay workshops and teams</p>
                         <div class="pricing-card__price">
                             <span class="pricing-card__currency">$</span>79
-                            <span class="pricing-card__period">/ month</span>
+                            <span class="pricing-card__period" data-i18n="per_month">/ month</span>
                         </div>
-
                         <ul class="pricing-card__features">
-                            <li>Everything in Pro</li>
-                            <li>Unlimited Staff Accounts</li>
-                            <li>Advanced Reports &amp; Analytics</li>
-                            <li>Priority Support</li>
-                            <li>Multi-location Support</li>
-                            <li>Custom Branding</li>
+                            <li data-i18n="plan3_f1">Everything in Pro</li>
+                            <li data-i18n="plan3_f2">Unlimited Staff Accounts</li>
+                            <li data-i18n="plan3_f3">Advanced Reports &amp; Analytics</li>
+                            <li data-i18n="plan3_f4">Priority Support</li>
+                            <li data-i18n="plan3_f5">Multi-location Support</li>
+                            <li data-i18n="plan3_f6">Custom Branding</li>
                         </ul>
-
-                        <a href="#" class="btn btn--outline pricing-card__button">Contact Sales</a>
+                        <a href="#" class="btn btn--outline pricing-card__button" data-i18n="plan3_cta">Contact Sales</a>
                     </article>
 
                 </div>
-
             </div>
         </section>
+
+        <!-- CTA -->
         <section id="cta" class="cta">
             <div class="container">
                 <div class="cta__card">
-                    <span class="cta__label">Start today</span>
-
-                    <h2 class="cta__title">
-                        Ready to take control of your workshop?
-                    </h2>
-
-                    <p class="cta__text">
-                        Join workshops that are saving time, reducing errors and improving customer satisfaction with
-                        AutoService.
-                    </p>
-
+                    <span class="cta__label" data-i18n="cta_label">Start today</span>
+                    <h2 class="cta__title" data-i18n="cta_title">Ready to take control of your workshop?</h2>
+                    <p class="cta__text" data-i18n="cta_text">Join workshops that are saving time, reducing errors and improving customer satisfaction with AutoService.</p>
                     <div class="cta__actions">
-                        <a href="#" class="btn btn--light">Start Free Trial</a>
-                        <a href="#" class="btn btn--ghost-light">Book a Demo</a>
+                        <a href="#" class="btn btn--light" data-i18n="cta_cta">Start Free Trial</a>
                     </div>
+                    <p class="cta__note" data-i18n="cta_note">No credit card required • Cancel anytime</p>
+                </div>
+            </div>
+        </section>
 
-                    <p class="cta__note">
-                        No credit card required • Cancel anytime
-                    </p>
+        <!-- CONTACT -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact__header">
+                    <span class="section-label section-label--primary" data-i18n="contact_label">CONTACT SALES</span>
+                    <h2 class="contact__title" data-i18n="contact_title">Let's get your workshop started</h2>
+                    <p class="contact__subtitle" data-i18n="contact_sub">Fill in your details and our team will reach out within 24 hours.</p>
+                </div>
+                <div class="contact__card">
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-name" data-i18n="field_name">Full name</label>
+                        <input class="contact__input" type="text" id="contact-name" data-i18n-placeholder="ph_name" placeholder="John Smith" />
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-email" data-i18n="field_email">Work email</label>
+                        <input class="contact__input" type="email" id="contact-email" data-i18n-placeholder="ph_email" placeholder="john@workshop.com" />
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-phone" data-i18n="field_phone">Phone number</label>
+                        <input class="contact__input" type="tel" id="contact-phone" data-i18n-placeholder="ph_phone" placeholder="+1 555 000 0000" />
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-workshop" data-i18n="field_workshop">Workshop name</label>
+                        <input class="contact__input" type="text" id="contact-workshop" data-i18n-placeholder="ph_workshop" placeholder="My Auto Workshop" />
+                    </div>
+                    <div class="contact__field contact__field--full">
+                        <label class="contact__label" for="contact-message" data-i18n="field_message">Anything you'd like us to know?</label>
+                        <textarea class="contact__input contact__textarea" id="contact-message" data-i18n-placeholder="ph_message" placeholder="Tell us about your workshop size, current tools, or any questions..."></textarea>
+                    </div>
+                    <div class="contact__field contact__field--full">
+                        <button class="btn btn--primary contact__submit">
+                            <i data-lucide="send"></i> <span data-i18n="contact_send">Send Message</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact" class="footer">
+    <footer class="footer">
         <div class="container footer__container">
-
             <div class="footer__brand">
                 <a href="#hero" class="footer__logo-group">
                     <img src="img/AutoService.jpeg" alt="AutoService logo" class="footer__logo" />
                     <span class="footer__title">AutoService</span>
                 </a>
-
-                <p class="footer__description">
-                    Digital management for automotive workshops. Organize work orders, vehicles, billing and customer
-                    tracking in one place.
-                </p>
+                <p class="footer__description" data-i18n="footer_desc">Digital management for automotive workshops. Organize work orders, vehicles, billing and customer tracking in one place.</p>
             </div>
-
             <div class="footer__links">
                 <div class="footer__column">
-                    <h4>Product</h4>
-                    <a href="#features">Features</a>
-                    <a href="#how-it-works">How it Works</a>
-                    <a href="#pricing">Pricing</a>
+                    <h4 data-i18n="footer_col1">Product</h4>
+                    <a href="#features" data-i18n="nav_features">Features</a>
+                    <a href="#how-it-works" data-i18n="nav_how">How it Works</a>
+                    <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
                 </div>
-
                 <div class="footer__column">
-                    <h4>Company</h4>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Support</a>
+                    <h4 data-i18n="footer_col2">Company</h4>
+                    <a href="#" data-i18n="footer_about">About</a>
+                    <a href="#contact" data-i18n="nav_contact">Contact</a>
+                    <a href="#" data-i18n="footer_support">Support</a>
                 </div>
-
                 <div class="footer__column">
-                    <h4>Resources</h4>
-                    <a href="#">Help Center</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Privacy</a>
+                    <h4 data-i18n="footer_col3">Resources</h4>
+                    <a href="#" data-i18n="footer_help">Help Center</a>
+                    <a href="#" data-i18n="footer_terms">Terms</a>
+                    <a href="#" data-i18n="footer_privacy">Privacy</a>
                 </div>
             </div>
-
         </div>
-
         <div class="footer__bottom">
             <div class="container footer__bottom-container">
-                <p>© 2026 AutoService. All rights reserved.</p>
+                <p>© 2026 InnovaTech. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="app.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>
