@@ -262,8 +262,8 @@ const translations = {
 /* =========================
    LANG TOGGLE
 ========================= */
-// Set Spanish as default language
-let currentLang = 'es';
+// Set english as default language
+let currentLang = 'en';
 
 function setLanguage(lang) {
     currentLang = lang;
@@ -350,5 +350,3 @@ document.querySelector('.contact__submit').addEventListener('click', () => {
 ========================= */
 lucide.createIcons();
 
-// Apply default language on page load
-setLanguage(currentLang);
