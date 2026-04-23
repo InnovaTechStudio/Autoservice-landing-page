@@ -262,7 +262,8 @@ const translations = {
 /* =========================
    LANG TOGGLE
 ========================= */
-let currentLang = 'en';
+// Set Spanish as default language
+let currentLang = 'es';
 
 function setLanguage(lang) {
     currentLang = lang;
