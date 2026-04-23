@@ -273,6 +273,7 @@ function setLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (t[key] !== undefined) {
+            //CRITICAL: InnerHTML is used to allow <span> tags in translations.
             el.innerHTML = t[key];
         }
     });
@@ -329,6 +330,8 @@ document.querySelectorAll('.tools__tab').forEach(tab => {
 /* =========================
    EMAILJS
 ========================= */
+
+// IMPORTANT: EmailJS public user ID. If you change accounts, update this key.
 emailjs.init('SAjESMVBEEDR8tqQj');
 
 document.querySelector('.contact__submit').addEventListener('click', () => {
@@ -340,6 +343,7 @@ document.querySelector('.contact__submit').addEventListener('click', () => {
         message: document.getElementById('contact-message').value,
     };
 
+    // CRITICAL: The 'service' and 'template' IDs must exactly match the EmailJS dashboard.
     emailjs.send('service_hftajuc', 'template_s2yqohj', params)
         .then(() => alert(currentLang === 'en' ? "Message sent! We'll be in touch soon." : '¡Mensaje enviado! Nos pondremos en contacto pronto.'))
         .catch(() => alert(currentLang === 'en' ? 'Something went wrong. Please try again.' : 'Algo salió mal. Por favor intenta de nuevo.'));
@@ -348,6 +352,9 @@ document.querySelector('.contact__submit').addEventListener('click', () => {
 /* =========================
    LUCIDE ICONS
 ========================= */
+
+// IMPORTANT: Run after any DOM changes (such as setLanguage)
+// si las nuevas traducciones inyectan elementos que requieran iconos.
 lucide.createIcons();
 
 // Apply default language on page load
