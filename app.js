@@ -262,6 +262,7 @@ const translations = {
 /* =========================
    LANG TOGGLE
 ========================= */
+// Set english as default language
 let currentLang = 'en';
 
 function setLanguage(lang) {
@@ -376,3 +377,4 @@ window.addEventListener("scroll", () => {
     el.style.transform = `translate3d(0, ${offset}px, 0)`;
   });
 });
+
