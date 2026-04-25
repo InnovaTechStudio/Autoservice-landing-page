@@ -7,10 +7,14 @@
     <title>AutoService | Digital Management for Workshops</title>
     <meta name="description"
         content="AutoService is a digital management platform for automotive workshops. Manage vehicles, work orders, billing and customer tracking in one place." />
+    
+    <!-- Iconos Lucide -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- EmailJS para envío de correos -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="icon" type="image/jpeg" href="img/AutoService.jpeg" />
@@ -19,6 +23,8 @@
 <body>
     <header class="navbar">
         <div class="container navbar__container">
+
+            <!-- Logo y nombre del sitio - Al hacer click lleva al inicio -->
             <a href="#hero" class="navbar__brand">
                 <img src="img/AutoService.jpeg" alt="AutoService logo" class="navbar__logo" />
                 <span class="navbar__title">AutoService</span>
@@ -46,6 +52,7 @@
 
     <main>
         <!-- HERO -->
+         <!-- Primera sección que ve el usuario al entrar -->
         <section id="hero" class="hero">
             <div class="container hero__container">
                 <div class="hero__top parallax" data-speed="0.05">
@@ -56,6 +63,7 @@
                         <a href="#pricing" class="btn btn--primary" data-i18n="hero_cta">Start Free Trial</a>
                     </div>
                 </div>
+                <!-- Imagen del dashboard (cambia según idioma) -->
                 <div class="hero__bottom parallax" data-speed="0.1">
                     <img src="img/dashboard-en.png" alt="AutoService Dashboard" class="hero__dashboard-img" />
                 </div>
@@ -63,6 +71,7 @@
         </section>
 
         <!-- FEATURES -->
+        <!-- Muestra las 3 características principales del producto -->
         <section id="features" class="features">
             <div class="container features__container">
                 <article class="feature-card reveal">
@@ -84,6 +93,7 @@
         </section>
 
         <!-- PROBLEM / SOLUTION -->
+        <!-- Explica el problema que resuelve AutoService y presenta la solución -->
         <section id="problem-solution" class="problem-solution">
             <div class="container problem-solution__container">
                 <div class="problem-solution__left reveal">
@@ -108,6 +118,7 @@
         </section>
 
         <!-- TOOLS -->
+        <!-- El usuario puede hacer clic en las pestañas para ver distintas vistas -->
         <section id="tools" class="tools">
             <div class="container">
                 <div class="tools__header reveal">
@@ -125,6 +136,7 @@
                         <i data-lucide="users"></i> <span data-i18n="tab3">Staff Management</span>
                     </button>
                 </div>
+                <!-- Contenedor de la imagen que cambia según pestaña seleccionada -->
                 <div class="tools__preview-card reveal">
                     <img id="toolPreviewImage" src="img/dashboard-en.png" alt="Dashboard Overview" class="tools__preview-image" />
                 </div>
@@ -132,6 +144,7 @@
         </section>
 
         <!-- HOW IT WORKS -->
+         <!-- Explica al usuario cómo empezar a usar AutoService en pasos simples -->
         <section id="how-it-works" class="steps">
             <div class="container">
                 <div class="steps__header">
@@ -159,6 +172,8 @@
         </section>
 
         <!-- SIMPLICITY -->
+        <!-- Galería de imágenes que muestra lo simple que es el sistema -->
+        <!-- Tiene botones de navegación para ver más imágenes (carrusel) -->
         <section id="simplicity" class="simplicity">
             <div class="container">
                 <div class="simplicity__top">
@@ -193,6 +208,8 @@
         </section>
 
         <!-- PRICING -->
+        <!-- Muestra los 3 planes disponibles: Free, Pro, Business -->
+        <!-- El plan Pro tiene clase "featured" para destacarlo visualmente -->
         <section id="pricing" class="pricing">
             <div class="container">
                 <div class="pricing__header">
@@ -201,6 +218,7 @@
                 </div>
                 <div class="pricing__grid">
 
+                    <!-- PLAN 1: FREE -->
                     <article class="pricing-card reveal">
                         <span class="pricing-card__tag" data-i18n="plan1_tag">Free</span>
                         <h3 class="pricing-card__plan" data-i18n="plan1_name">Free</h3>
@@ -220,6 +238,7 @@
                         <a href="#" class="btn btn--outline pricing-card__button" data-i18n="plan1_cta">Get Started</a>
                     </article>
 
+                    <!-- PLAN 2: PRO -->
                     <article class="pricing-card pricing-card--featured">
                         <span class="pricing-card__tag pricing-card__tag--featured" data-i18n="plan2_tag">Most Popular</span>
                         <h3 class="pricing-card__plan" data-i18n="plan2_name">Pro</h3>
@@ -240,6 +259,7 @@
                         <a href="#" class="btn btn--primary pricing-card__button" data-i18n="plan2_cta">Start Free Trial</a>
                     </article>
 
+                    <!-- PLAN 3: BUSINESS -->
                     <article class="pricing-card reveal">
                         <span class="pricing-card__tag" data-i18n="plan3_tag">Business</span>
                         <h3 class="pricing-card__plan" data-i18n="plan3_name">Business</h3>
@@ -264,6 +284,7 @@
         </section>
 
         <!-- CTA -->
+        <!-- Featured banner encouraging users to sign up -->
         <section id="cta" class="cta">
             <div class="container">
                 <div class="cta__card reveal">
@@ -279,6 +300,7 @@
         </section>
 
         <!-- CONTACT -->
+        <!-- Form for users to submit inquiries -->
         <section id="contact" class="contact">
             <div class="container">
                 <div class="contact__header reveal">
