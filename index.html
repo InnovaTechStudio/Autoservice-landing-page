@@ -7,10 +7,14 @@
     <title>AutoService | Digital Management for Workshops</title>
     <meta name="description"
         content="AutoService is a digital management platform for automotive workshops. Manage vehicles, work orders, billing and customer tracking in one place." />
+    
+    <!-- Iconos Lucide -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- EmailJS para envío de correos -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="icon" type="image/jpeg" href="img/AutoService.jpeg" />
@@ -19,6 +23,8 @@
 <body>
     <header class="navbar">
         <div class="container navbar__container">
+
+            <!-- Logo y nombre del sitio - Al hacer click lleva al inicio -->
             <a href="#hero" class="navbar__brand">
                 <img src="img/AutoService.jpeg" alt="AutoService logo" class="navbar__logo" />
                 <span class="navbar__title">AutoService</span>
@@ -46,6 +52,7 @@
 
     <main>
         <!-- HERO -->
+         <!-- Primera sección que ve el usuario al entrar -->
         <section id="hero" class="hero">
             <div class="container hero__container">
                 <div class="hero__top parallax" data-speed="0.05">
@@ -56,6 +63,7 @@
                         <a href="#pricing" class="btn btn--primary" data-i18n="hero_cta">Start Free Trial</a>
                     </div>
                 </div>
+                <!-- Imagen del dashboard (cambia según idioma) -->
                 <div class="hero__bottom parallax" data-speed="0.1">
                     <img src="img/dashboard-en.png" alt="AutoService Dashboard" class="hero__dashboard-img" />
                 </div>
@@ -63,6 +71,7 @@
         </section>
 
         <!-- FEATURES -->
+        <!-- Muestra las 3 características principales del producto -->
         <section id="features" class="features">
             <div class="container features__container">
                 <article class="feature-card reveal">
@@ -84,6 +93,7 @@
         </section>
 
         <!-- PROBLEM / SOLUTION -->
+        <!-- Explica el problema que resuelve AutoService y presenta la solución -->
         <section id="problem-solution" class="problem-solution">
             <div class="container problem-solution__container">
                 <div class="problem-solution__left reveal">
